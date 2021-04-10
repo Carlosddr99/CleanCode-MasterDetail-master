@@ -19,7 +19,7 @@ public class CategoryScreen {
         CatalogMediator mediator = CatalogMediator.getInstance();
 
         CategoryContract.Presenter presenter = new CategoryPresenter(mediator);
-        CategoryContract.Model model = new CategoryModel(data);
+        CategoryContract.Model model = new CategoryModel();
         presenter.injectModel(model);
         presenter.injectView(new WeakReference<>(view));
 

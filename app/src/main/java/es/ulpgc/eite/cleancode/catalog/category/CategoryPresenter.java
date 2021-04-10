@@ -78,6 +78,9 @@ public class CategoryPresenter implements CategoryContract.Presenter {
     }
     @Override
     public void obtenerCategorias(){
+        state.categories = model.obtenerLasCategorias();
+
+        view.get().onDataUpdated(state);
 
     }
 
