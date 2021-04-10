@@ -13,6 +13,7 @@ public class ProductListModel implements ProductListContract.Model {
 
   private final List<ProductItem> itemList = new ArrayList<>();
   private final int COUNT = 20;
+  private int categoriaSeleccionada;
 
   public ProductListModel() {
     // Add some sample items
@@ -27,13 +28,18 @@ public class ProductListModel implements ProductListContract.Model {
     return itemList;
   }
 
+  @Override
+  public void pasarCategoria(int categoriaSeleccionada) {
+    this.categoriaSeleccionada=categoriaSeleccionada;
+  }
+
   private void addProduct(ProductItem item) {
     itemList.add(item);
   }
 
 
   private ProductItem createProduct(int position) {
-    String content = "Product " + position;
+    String content = "Product "+categoriaSeleccionada+"."+ position;
 
     return new ProductItem(
         position, content, fetchProductDetails(position)

@@ -11,6 +11,7 @@ public class CatalogMediator {
   private CategoryState estadoCategory=new CategoryState();
 
   private ProductItem product;
+  private CategorySelect categoriaDada;
 
 
   private static CatalogMediator INSTANCE;
@@ -56,6 +57,13 @@ public class CatalogMediator {
     return estadoCategory;
   }
 
+  public CategorySelect getCategoria() {
+    CategorySelect item = categoriaDada;
+    //product = null;
+    return item;
+  }
+
     public void setCategoryToProducts(CategorySelect state) {
+    categoriaDada=state;
     }
 }

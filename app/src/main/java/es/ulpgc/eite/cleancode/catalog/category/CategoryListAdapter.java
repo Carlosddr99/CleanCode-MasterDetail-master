@@ -51,7 +51,7 @@ public class CategoryListAdapter extends ArrayAdapter<CategorySelect> {
         if (itemView == null) {
             itemView = LayoutInflater
                     .from(parent.getContext())
-                    .inflate(R.layout.product_list_content, parent, false);
+                    .inflate(R.layout.category_list_content, parent, false);
         }
 
         itemView.setTag(itemList.get(position));

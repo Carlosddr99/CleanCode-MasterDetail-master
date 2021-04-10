@@ -1,6 +1,7 @@
 package es.ulpgc.eite.cleancode.catalog.products;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,10 +13,13 @@ import java.util.List;
 import es.ulpgc.eite.cleancode.catalog.R;
 import es.ulpgc.eite.cleancode.catalog.app.ProductItem;
 
+import static android.content.ContentValues.TAG;
+
 public class ProductListAdapter extends ArrayAdapter<ProductItem> {
 
   private final List<ProductItem> itemList;
   private final View.OnClickListener clickListener;
+
 
 
   public ProductListAdapter(
@@ -25,6 +29,7 @@ public class ProductListAdapter extends ArrayAdapter<ProductItem> {
 
     itemList = items;
     clickListener = listener;
+
   }
 
 
@@ -57,7 +62,7 @@ public class ProductListAdapter extends ArrayAdapter<ProductItem> {
     itemView.setOnClickListener(clickListener);
 
     final TextView contentView = itemView.findViewById(R.id.content);
-    contentView.setText(itemList.get(position).content);
+    contentView.setText( itemList.get(position).content);
 
     return itemView;
   }

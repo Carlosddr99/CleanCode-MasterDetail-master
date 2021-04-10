@@ -70,7 +70,8 @@ public class ProductListActivity
 
     // deal with the data
     listView.setAdapter(new ProductListAdapter(
-            this, viewModel.products, new View.OnClickListener() {
+            this,
+            viewModel.products, new View.OnClickListener() {
 
           @Override
           public void onClick(View view) {
