@@ -21,6 +21,7 @@ public interface CategoryContract {
 
         void injectModel(Model model);
         void obtenerCategorias();
+        void seleccionaCategoria(CategorySelect categoria);
 
         void onResume();
 

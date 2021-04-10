@@ -49,6 +49,7 @@ public class ProductListPresenter implements ProductListContract.Presenter {
   public void fetchProductListData() {
     // Log.e(TAG, "fetchProductListData()");
 
+
     // call the model
     state.products = model.fetchProductListData();
 

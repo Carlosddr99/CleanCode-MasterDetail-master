@@ -4,6 +4,7 @@ import java.lang.ref.WeakReference;
 
 import es.ulpgc.eite.cleancode.catalog.app.CatalogMediator;
 import es.ulpgc.eite.cleancode.catalog.app.CategorySelect;
+import es.ulpgc.eite.cleancode.catalog.app.ProductItem;
 
 public class CategoryPresenter implements CategoryContract.Presenter {
 
@@ -82,6 +83,13 @@ public class CategoryPresenter implements CategoryContract.Presenter {
 
         view.get().onDataUpdated(state);
 
+    }
+    @Override
+    public void seleccionaCategoria(CategorySelect categoria) {
+        //router.passDataToProductDetailScreen(item);
+        goToListProducts(categoria);
+        //router.navigateToProductDetailScreen();
+        view.get().navigateToNextScreen();
     }
 
 

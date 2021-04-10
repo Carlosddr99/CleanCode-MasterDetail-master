@@ -3,6 +3,7 @@ package es.ulpgc.eite.cleancode.catalog.category;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -11,7 +12,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import es.ulpgc.eite.cleancode.catalog.R;
+import es.ulpgc.eite.cleancode.catalog.app.CategorySelect;
+import es.ulpgc.eite.cleancode.catalog.app.ProductItem;
 import es.ulpgc.eite.cleancode.catalog.products.ProductListActivity;
+import es.ulpgc.eite.cleancode.catalog.products.ProductListAdapter;
 
 public class CategoryActivity
         extends AppCompatActivity implements CategoryContract.View {
@@ -81,10 +85,16 @@ public class CategoryActivity
 
     @Override
     public void onDataUpdated(CategoryViewModel viewModel) {
-        //Log.e(TAG, "onDataUpdated()");
+        listView.setAdapter(new CategoryListAdapter(
+                        this, viewModel.categories, new View.OnClickListener() {
 
-        // deal with the data
-       // ((TextView) findViewById(R.id.data)).setText(viewModel.data);
+                    @Override
+                    public void onClick(View view) {
+                        CategorySelect item = (CategorySelect) view.getTag();
+                        presenter.seleccionaCategoria(item);
+                    }
+                })
+        );
     }
 
 

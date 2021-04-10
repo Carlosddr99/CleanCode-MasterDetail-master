@@ -52,6 +52,7 @@ public class ProductListActivity
     ProductListScreen.configure(this);
 
     // do some work
+
     presenter.fetchProductListData();
   }
 
