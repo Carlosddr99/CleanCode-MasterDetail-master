@@ -11,12 +11,20 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".products.ProductListActivity"
+            android:name=".category.CategoryActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".products.ProductListActivity"
+            android:parentActivityName=".category.CategoryActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="es.ulpgc.eite.cleancode.catalog.category.CategoryActivity"/>
         </activity>
         <activity
             android:name=".product.ProductDetailActivity"

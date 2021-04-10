@@ -40,7 +40,7 @@ public class ProductListActivity
       actionBar.setTitle(getString(R.string.title_product_list));
     }
 
-    listView = findViewById(R.id.product_list);
+    listView = findViewById(R.id.activity_list);
 
     /*
     if(savedInstanceState == null) {

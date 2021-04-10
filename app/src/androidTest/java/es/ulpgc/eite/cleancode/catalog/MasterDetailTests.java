@@ -48,14 +48,14 @@ public class MasterDetailTests {
     */
 
     onData(anything())
-        .inAdapterView(withId(R.id.product_list))
+        .inAdapterView(withId(R.id.activity_list))
         .atPosition(0)
         .onChildView(withId(R.id.content))
         .check(matches(withText("Product 1")));
 
 
     DataInteraction linearLayout = onData(anything())
-        .inAdapterView(allOf(withId(R.id.product_list)))
+        .inAdapterView(allOf(withId(R.id.activity_list)))
         .atPosition(3);
     linearLayout.perform(click());
 
@@ -95,13 +95,13 @@ public class MasterDetailTests {
     */
 
     onData(anything())
-        .inAdapterView(withId(R.id.product_list))
+        .inAdapterView(withId(R.id.activity_list))
         .atPosition(0)
         .onChildView(withId(R.id.content))
         .check(matches(withText("Product 1")));
 
     DataInteraction linearLayout3 = onData(anything())
-        .inAdapterView(allOf(withId(R.id.product_list)))
+        .inAdapterView(allOf(withId(R.id.activity_list)))
         .atPosition(5);
     linearLayout3.perform(click());
 
