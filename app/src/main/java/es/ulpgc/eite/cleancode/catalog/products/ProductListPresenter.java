@@ -51,7 +51,7 @@ public class ProductListPresenter implements ProductListContract.Presenter {
   @Override
   public void fetchProductListData() {
     // Log.e(TAG, "fetchProductListData()");
-    state.categoriaSeleccionada=0;
+
 
     CategorySelect savedState = mediator.getCategoria();
     if (savedState != null) {

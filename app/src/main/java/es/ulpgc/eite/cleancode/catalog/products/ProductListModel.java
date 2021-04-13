@@ -15,11 +15,11 @@ public class ProductListModel implements ProductListContract.Model {
   private final int COUNT = 20;
   private int categoriaSeleccionada ;
 
-  public ProductListModel() {
+  public ProductListModel(int categoriaSeleccionada) {
     // Add some sample items
-
+    this.categoriaSeleccionada=categoriaSeleccionada;
     for (int index = 1; index <= COUNT; index++) {
-      addProduct(createProduct(index));
+      addProduct(createProduct(index,categoriaSeleccionada));
 
     }
   }
@@ -37,19 +37,19 @@ public class ProductListModel implements ProductListContract.Model {
   }
 
 
-  private ProductItem createProduct(int position) {
+  private ProductItem createProduct(int position,int categoria) {
 
-    String content = "Product "+ position;
+    String content = "Product "+categoria+"."+ position;
 
     return new ProductItem(
-        position, content, fetchProductDetails(position)
+        position, content, fetchProductDetails(position,categoria)
     );
 
   }
 
 
-  private String fetchProductDetails(int position) {
-    String content = "Details about Product:  "+ position;
+  private String fetchProductDetails(int position,int categoria) {
+    String content = "Details about Product:  "+categoria+"."+ position;
     StringBuilder builder = new StringBuilder();
     builder.append(content);
 

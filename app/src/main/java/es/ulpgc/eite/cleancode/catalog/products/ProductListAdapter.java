@@ -19,18 +19,18 @@ public class ProductListAdapter extends ArrayAdapter<ProductItem> {
 
   private final List<ProductItem> itemList;
   private final View.OnClickListener clickListener;
-  private int categoria;
+
 
 
 
   public ProductListAdapter(
-      Context context,int categoria, List<ProductItem> items, View.OnClickListener listener) {
+      Context context, List<ProductItem> items, View.OnClickListener listener) {
 
     super(context, 0, items);
 
     itemList = items;
     clickListener = listener;
-    this.categoria=categoria;
+
 
   }
 
@@ -65,7 +65,7 @@ public class ProductListAdapter extends ArrayAdapter<ProductItem> {
 
     final TextView contentView = itemView.findViewById(R.id.content);
 
-      contentView.setText("Product " + categoria+"."+position+1);
+      contentView.setText(itemList.get(position).content);
 
     return itemView;
   }
