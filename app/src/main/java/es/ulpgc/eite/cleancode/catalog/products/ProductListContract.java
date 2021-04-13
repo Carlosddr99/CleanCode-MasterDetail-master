@@ -27,7 +27,7 @@ interface ProductListContract {
   interface Model {
     List<ProductItem> fetchProductListData();
 
-    void pasarCategoria(int categoriaSeleccionada);
+
   }
 
 //  interface Router {

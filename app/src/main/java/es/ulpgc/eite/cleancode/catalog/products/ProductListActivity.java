@@ -51,6 +51,7 @@ public class ProductListActivity
     // do the setup
     ProductListScreen.configure(this);
 
+
     // do some work
 
     presenter.fetchProductListData();
@@ -70,7 +71,7 @@ public class ProductListActivity
 
     // deal with the data
     listView.setAdapter(new ProductListAdapter(
-            this,
+            this,viewModel.categoriaSeleccionada,
             viewModel.products, new View.OnClickListener() {
 
           @Override

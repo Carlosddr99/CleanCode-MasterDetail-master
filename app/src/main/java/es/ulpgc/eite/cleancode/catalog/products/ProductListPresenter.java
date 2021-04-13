@@ -51,17 +51,21 @@ public class ProductListPresenter implements ProductListContract.Presenter {
   @Override
   public void fetchProductListData() {
     // Log.e(TAG, "fetchProductListData()");
+    state.categoriaSeleccionada=0;
+
     CategorySelect savedState = mediator.getCategoria();
     if (savedState != null) {
 
       // update the model if is necessary
-     state.categoriaSeleccionada=savedState.id;
+      state.categoriaSeleccionada=savedState.id;
+
 
     }
-
     // call the model
-    model.pasarCategoria(state.categoriaSeleccionada);
+
+
     state.products = model.fetchProductListData();
+
 
     view.get().displayProductListData(state);
 

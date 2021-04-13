@@ -13,12 +13,14 @@ public class ProductListModel implements ProductListContract.Model {
 
   private final List<ProductItem> itemList = new ArrayList<>();
   private final int COUNT = 20;
-  private int categoriaSeleccionada;
+  private int categoriaSeleccionada ;
 
   public ProductListModel() {
     // Add some sample items
+
     for (int index = 1; index <= COUNT; index++) {
       addProduct(createProduct(index));
+
     }
   }
 
@@ -28,10 +30,7 @@ public class ProductListModel implements ProductListContract.Model {
     return itemList;
   }
 
-  @Override
-  public void pasarCategoria(int categoriaSeleccionada) {
-    this.categoriaSeleccionada=categoriaSeleccionada;
-  }
+
 
   private void addProduct(ProductItem item) {
     itemList.add(item);
@@ -39,7 +38,8 @@ public class ProductListModel implements ProductListContract.Model {
 
 
   private ProductItem createProduct(int position) {
-    String content = "Product "+categoriaSeleccionada+"."+ position;
+
+    String content = "Product "+ position;
 
     return new ProductItem(
         position, content, fetchProductDetails(position)
@@ -49,7 +49,7 @@ public class ProductListModel implements ProductListContract.Model {
 
 
   private String fetchProductDetails(int position) {
-    String content = "Details about Product:  " + position;
+    String content = "Details about Product:  "+ position;
     StringBuilder builder = new StringBuilder();
     builder.append(content);
 
